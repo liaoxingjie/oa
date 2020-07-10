@@ -138,6 +138,7 @@ public final class VerifyCodeUtils {
 	 * @throws IOException
 	 */
 	public static void outputImage(int w, int h, OutputStream os, String code) throws IOException {
+		System.setProperty("java.awt.headless", "true");//解决linux验证码图片不生成的问题
 		int verifySize = code.length();
 		BufferedImage image = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
 		Random rand = new Random();
