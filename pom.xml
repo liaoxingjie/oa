@@ -6,8 +6,8 @@
 	<groupId>cn.gson</groupId>
 	<artifactId>oasys</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-<!--	<packaging>war</packaging>-->
+<!--	<packaging>jar</packaging>-->
+	<packaging>war</packaging>
 
 	<name>oasys</name>
 	<description>Demo project for Spring Boot</description>
@@ -27,6 +27,12 @@
 	</properties>
 
 	<dependencies>
+		<!--使用war的时候需要用到-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope><!--在Ide中调试时需要注销掉该scope，否则项目启动不起来-->
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
